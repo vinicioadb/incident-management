@@ -1,0 +1,120 @@
+﻿@model v1.Models.ViewModels.IngresarViewModel
+
+@{
+    ViewData["Title"] = "Ingresar";
+}
+
+<div class="form-signin m-auto mt-5">
+
+    <div class="container">
+        <div class="row d-flex align-items-stretch">
+            <div class="col-8 text-start d-flex flex-column justify-content-center"
+                style="border-radius: 8px;">
+                
+                <div class="fw-bold fs-2 h1">Iniciar sesión</div>
+                <div>Ingrese sus credenciales</div>
+            </div>
+
+            <div class="col-4 text-end d-flex flex-column justify-content-center" 
+                style="border-radius: 8px; background-color: #0d1321;">
+
+                <img src="~/img/desk_core_nombre_w.svg" alt="Desk Core" height="70">
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <form asp-action="Ingresar" method="post">
+        
+        @if (ViewData["RegistroExitoso"] != null)
+        {
+            <div class="alert alert-success text-center" role="alert">
+                @ViewData["RegistroExitoso"]
+            </div>
+        }
+
+        @if (ViewData["ErrorIngreso"] != null)
+        {
+
+            <div class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="d-flex">
+                    <div class="toast-body">
+                        Hello, world! This is a toast message.
+                    </div>
+                    <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+            </div>
+
+            
+        }
+
+        @if (ViewData["RecuperacionExitosa"] != null)
+        {
+            <div class="alert alert-success text-center" role="alert">
+                @ViewData["RecuperacionExitosa"]
+            </div>
+        }
+
+        @if (ViewData["EnlaceReuperacion"] != null)
+        {
+            <div class="alert alert-info text-center" role="alert">
+                @ViewData["EnlaceReuperacion"]
+            </div>
+        }
+
+        <div class="form-floating">
+            <input class="form-control principal-input mbrl-0"
+                asp-for="UsurCorreo" placeholder="CorreoElectronico">
+
+            <label asp-for="UsurCorreo">Correo Electrónico</label>
+            <span asp-validation-for="UsurCorreo" class="text-danger"></span>
+        </div>
+        
+        <div class="form-floating mb-4">
+            <input class="form-control principal-input mtrl-0"
+                asp-for="UsurClave" placeholder="Contraseña">
+
+            <label asp-for="UsurClave">Contraseña</label>
+            <span asp-validation-for="UsurClave" class="text-danger"></span>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                    <label class="form-check-label" for="flexCheckDefault">
+                        Recuérdame
+                    </label>
+                </div>
+            </div>
+
+            <div class="col-9">
+                <p class="text-end">
+                    <a class="text-decoration-none" asp-controller="Acceso" asp-action="Recuperar">¿Olvidaste tu contraseña?</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="d-grid gap-2 mb-4">
+            <button type="submit" class="btn btn-principal">Iniciar Sesión</button>
+        </div> 
+
+    </form>
+    
+    <p class="text-center">¿No tienes cuenta? <a asp-controller="Acceso" asp-action="RegistrarEmail" class="text-decoration-none">Registrate aquí</a></p>
+
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var errorMessage = "@Html.Raw(ViewData["ErrorMessage"])";
+            if (errorMessage) {
+                var toastElement = document.getElementById('errorToast');
+                var toast = new bootstrap.Toast(toastElement);
+                toast.show();
+            }
+        });
+    </script>
+}

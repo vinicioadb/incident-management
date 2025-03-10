@@ -1,0 +1,48 @@
+﻿@model v1.Models.ViewModels.RegistrarViewModel
+
+<div class="container mt-5">
+    <h2>Registrar Nuevo Usuario</h2>
+    <form asp-action="Registrar" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input type="hidden" asp-for="UsurCorreo" />
+
+        <div class="form-group">
+            <label asp-for="UsurNombre">Nombre</label>
+            <input type="text" class="form-control" asp-for="UsurNombre" />
+            <span asp-validation-for="UsurNombre" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="UsurApellido">Apellido</label>
+            <input type="text" class="form-control" asp-for="UsurApellido" />
+            <span asp-validation-for="UsurApellido" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="UsurClave">Contraseña</label>
+            <input type="password" class="form-control" asp-for="UsurClave" />
+            <span asp-validation-for="UsurClave" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="UsurCedula">Cédula</label>
+            <input type="text" class="form-control" asp-for="UsurCedula" />
+            <span asp-validation-for="UsurCedula" class="text-danger"></span>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="RolId">Rol</label>
+            <select class="form-control" asp-for="RolId" asp-items="Model.Roles">
+                <option value="">Selecciona un rol</option>
+            </select>
+            <span asp-validation-for="RolId" class="text-danger"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-3">Registrar</button>
+    </form>
+</div>
+
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,181 @@
+﻿<style>
+    .action-buttons .btn {
+        padding: 0.25rem 0.5rem;
+        font-size: 0.875rem;
+    }
+
+    .modal-header {
+        background-color: #f8f9fa;
+    }
+
+    .status-active {
+        color: #198754;
+    }
+
+    .status-inactive {
+        color: #dc3545;
+    }
+
+    .table-hover tbody tr:hover {
+        background-color: rgba(0, 0, 0, .02);
+    }
+</style>
+
+@await Html.PartialAsync("Components/_Sidebar")
+
+<div class="container">
+    <div class="card">
+        
+        <div class="card-header bg-white d-flex justify-content-between align-items-center">
+            <h4 class="mb-0">Gestión de Usuarios</h4>
+            <button class="btn btn-principal" data-bs-toggle="modal" data-bs-target="#userModal">
+                <i class="bi bi-plus-circle me-2"></i>Nuevo Usuario
+            </button>
+        </div>
+
+        <div class="card-body">
+            <table id="usersTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Email</th>
+                        <th>Rol</th>
+                        <th>Estado</th>
+                        <th>Última Conexión</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>001</td>
+                        <td>Juan Pérez</td>
+                        <td>juan.perez@email.com</td>
+                        <td>Cliente</td>
+                        <td><span class="badge bg-success">Activo</span></td>
+                        <td>2024-02-07 10:30</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#userModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="confirmDelete(1)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>002</td>
+                        <td>María García</td>
+                        <td>maria.garcia@email.com</td>
+                        <td>Técnico</td>
+                        <td><span class="badge bg-success">Activo</span></td>
+                        <td>2024-02-07 09:15</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#userModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="confirmDelete(2)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>003</td>
+                        <td>Carlos López</td>
+                        <td>carlos.lopez@email.com</td>
+                        <td>Administrador</td>
+                        <td><span class="badge bg-danger">Inactivo</span></td>
+                        <td>2024-02-06 15:45</td>
+                        <td>
+                            <div class="action-buttons">
+                                <button class="btn btn-info btn-sm" data-bs-toggle="modal" data-bs-target="#userModal">
+                                    <i class="bi bi-pencil"></i>
+                                </button>
+                                <button class="btn btn-danger btn-sm" onclick="confirmDelete(3)">
+                                    <i class="bi bi-trash"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- Modal para Crear/Editar Usuario -->
+<div class="modal fade" id="userModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalTitle">Nuevo Usuario</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <form id="userForm">
+                    <div class="mb-3">
+                        <label class="form-label">Nombre Completo</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Contraseña</label>
+                            <input type="password" class="form-control" required>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label class="form-label">Confirmar Contraseña</label>
+                            <input type="password" class="form-control" required>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Rol</label>
+                        <select class="form-select" required>
+                            <option value="">Seleccionar Rol</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Técnico</option>
+                            <option value="3">Cliente</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Estado</label>
+                        <select class="form-select" required>
+                            <option value="1">Activo</option>
+                            <option value="0">Inactivo</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" onclick="saveUser()">Guardar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal de Confirmación de Eliminación -->
+<div class="modal fade" id="deleteModal" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmar Eliminación</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                ¿Está seguro que desea eliminar este usuario? Esta acción no se puede deshacer.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" onclick="deleteUser()">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>

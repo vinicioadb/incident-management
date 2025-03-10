@@ -1,0 +1,233 @@
+﻿@using System.Security.Claims
+@{
+    var usuario = User.Identity as ClaimsIdentity;
+
+    var usuNombre = usuario?.FindFirst(ClaimTypes.Name)?.Value;
+    var usuApellido = usuario?.FindFirst(ClaimTypes.Surname)?.Value;
+    var usuRol = usuario?.FindFirst(ClaimTypes.Role)?.Value;
+}
+
+<!-- Estilos menu -->
+<style>
+    .floating-menu {
+        position: fixed;
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(8px);
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        z-index: 1000;
+        width: 95%;
+        max-width: 1320px;
+    }
+
+    .floating-menu .nav-link {
+        color: #6c757d;
+        padding: 10px 20px;
+        transition: all 0.3s ease;
+        border-radius: 15px;
+    }
+
+    .floating-menu .nav-link:hover {
+        background: #f8f9fa;
+        color: #1768ac;
+    }
+
+    .floating-menu .nav-link i {
+        font-size: 1.5rem;
+    }
+
+    .floating-menu .dropdown-menu {
+        bottom: 100%;
+        top: auto !important;
+        margin-bottom: 10px;
+    }
+
+    .top-nav {
+        background: white;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+        height: 200px;
+    }
+</style>
+
+<!-- Menú flotante -->
+<div class="floating-menu">
+    <ul class="nav justify-content-between align-items-center">
+        
+        <li class="nav-item">
+            <a asp-controller="@usuRol" asp-action="Index" class="nav-link text-center">
+                <i class="bi bi-house"></i>
+                <div class="small">Inicio</div class="small">
+            </a>
+        </li>
+
+        @if (usuRol == "Administrador")
+        {
+            <li class="nav-item">
+                <a asp-controller="@usuRol" asp-action="lista_usuarios" class="nav-link text-center">
+                    <i class="bi bi-people"></i>
+                    <div class="small">Usuarios</div>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-center">
+                    <i class="bi bi-building"></i>
+                    <div class="small">Empresas</div>
+                </a>
+            </li>
+
+            <li class="nav-item d-none d-sm-block">
+                <a asp-controller="Administrador" asp-action="addticket" class="nav-link text-center">
+                    <i class="bi bi-ticket"></i>
+                    <div class="small">Incidiencias</div>
+                </a>
+            </li>
+
+            <li class="nav-item d-none d-md-block">
+                <a class="nav-link text-center">
+                    <i class="bi bi-file-earmark-text"></i>
+                    <div class="small">Reportes</div>
+                </a>
+            </li>
+
+            <li class="nav-item d-none d-md-block">
+                <a class="nav-link text-center">
+                    <i class="bi bi-tools"></i>
+                    <div class="small">Mantenimiento</div>
+                </a>
+            </li>
+        }
+        
+        @if (usuRol == "Tecnico")
+        {
+            <li class="nav-item">
+                <a class="nav-link text-center">
+                    <i class="bi bi-kanban"></i>
+                    <div class="small">Tablero</div>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-center">
+                    <i class="bi bi-ticket"></i>
+                    <div class="small">Incidiencias</div>
+                </a>
+            </li>
+
+            <li class="nav-item d-none d-md-block">
+                <a class="nav-link text-center">
+                    <i class="bi bi-file-earmark-text"></i>
+                    <div class="small">Reportes</div>
+                </a>
+            </li>
+
+            <li class="nav-item d-none d-md-block">
+                <a class="nav-link text-center">
+                    <i class="bi bi-chat-left-dots"></i>
+                    <div class="small">Comentarios</div>
+                </a>
+            </li>
+        }
+
+        @if (usuRol == "Cliente")
+        {
+            <li class="nav-item">
+                <a class="nav-link text-center">
+                    <i class="bi bi-ticket"></i>
+                    <div class="small">Incidiencias</div>
+                </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link text-center">
+                    <i class="bi bi-x-square"></i>
+                    <div class="small">Cancelados</div>
+                </a>
+            </li>
+
+            <li class="nav-item d-none d-sm-block">
+                <a class="nav-link text-center">
+                    <i class="bi bi-clock"></i>
+                    <div class="small">En Espera</div>
+                </a>
+            </li>
+
+            <li class="nav-item d-none d-md-block">
+                <a class="nav-link text-center">
+                    <i class="bi bi-chat-left-dots"></i>
+                    <div class="small">Comentarios</div>
+                </a>
+            </li>
+
+            <li class="nav-item d-none d-md-block">
+                <a class="nav-link text-center">
+                    <i class="bi bi-gear"></i>
+                    <div class="small">Cuenta</div>
+                </a>
+            </li>
+        }
+
+        <!-- Mneu Tablets -->
+        <li class="nav-item dropdown d-none d-sm-block d-md-none">
+            <a class="nav-link text-center" href="#" data-bs-toggle="dropdown">
+                <i class="bi bi-three-dots"></i>
+                <div class="small">Más</div>
+            </a>
+
+            <ul class="dropdown-menu">
+                @if (usuRol == "Administrador") {
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-text me-2"></i>Reportes</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-tools me-2"></i>Mantenimiento</a></li>
+                }
+                
+                @if (usuRol == "Tecnico") {
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-text me-2"></i>Reportes</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-chat me-2"></i>Comentarios</a></li>
+                }
+
+                @if (usuRol == "Cliente")
+                {
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-chat me-2"></i>Comentarios</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Cuenta</a></li>
+                }
+            </ul>
+        </li>
+
+        <!-- Menu Moviles -->
+        <li class="nav-item dropdown d-md-none d-block d-sm-none">
+            <a class="nav-link text-center" href="#" data-bs-toggle="dropdown">
+                <i class="bi bi-three-dots"></i>
+                <div class="small">Más</div>
+            </a>
+
+            <ul class="dropdown-menu">
+                @if (usuRol == "Administrador") {
+                    <li><a asp-controller="@usuRol" asp-action="addticket" class="dropdown-item">
+                        <i class="bi bi-ticket me-2"></i>Incidencias</a></li>
+                    
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-text me-2"></i>Reportes</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bbi bi-tools me-2"></i>Mantenimiento</a></li>
+                }
+                @if (usuRol == "Tecnico")
+                {
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-file-earmark-text me-2"></i>Reportes</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-chat me-2"></i>Comentarios</a></li>
+                }
+                @if (usuRol == "Cliente")
+                {
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-clock me-2"></i>En espera</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-chat me-2"></i>Comentarios</a></li>
+                    <li><a class="dropdown-item" href="#"><i class="bi bi-gear me-2"></i>Cuenta</a></li>
+                }
+            </ul>
+        </li>
+    </ul>
+</div>

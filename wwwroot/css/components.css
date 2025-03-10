@@ -1,0 +1,161 @@
+/* Botón personalizado */
+
+.btn-principal {
+    background-color: #1768ac;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.btn-principal:focus,
+.btn-principal:hover,
+.btn-principal:active {
+    background-color: #0A365A;
+    color: white;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.btn-principal:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    border-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.btn-cancelar {
+    background-color: #c1121f;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-cancelar:hover {
+    background-color: #780000;
+    color: white;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-cancelar:focus {
+    background-color: #780000;
+    color: white;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-cancelar:active {
+    background-color: #780000;
+    color: white;
+    box-shadow: none;
+}
+
+.btn-cancelar:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    border-color: #cccccc;
+    cursor: not-allowed;
+}
+
+.form-control.principal-input {
+    border-radius: 8px;
+    background-color: transparent; /* Fondo transparente */
+    box-shadow: none; /* Sin sombras */
+}
+
+.form-control.principal-input:focus {
+    /*border-radius: 8px;*/
+    outline: none;
+    box-shadow: none;
+}
+
+.form-select.principal-input {
+    border-radius: 8px;
+    background-color: transparent; /* Fondo transparente */
+    box-shadow: none; /* Sin sombras */
+}
+
+.form-select.principal-input:focus {
+    /*border-radius: 8px;*/
+    outline: none;
+    box-shadow: none;
+}
+
+.form-signin {
+    max-width: 400px;
+    padding: 1rem;
+}
+
+.form-control.mbrl-0 {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-control.mtrl-0 {
+    margin-bottom: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+/*
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.form-signin input[type="number"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+*/
+
+.btn-secundario {
+    background-color: #20517a;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 8px;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-secundario:hover {
+    background-color: #0c3e67;
+    color: white;
+    text-decoration: none;
+}
+
+.btn-secundario:active {
+    background-color: #0c3e67;
+    color: white;
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-secundario:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    border-color: #cccccc;
+    cursor: not-allowed;
+}

@@ -1,0 +1,54 @@
+﻿@model v1.Models.ViewModels.ResetPasswordViewModel
+
+@{
+    ViewData["Title"] = "Restablecer Contraseña";
+}
+
+<div class="form-signin m-auto mt-5">
+
+    <div class="container mt-1 mb-3">
+        <div class="row d-flex align-items-stretch">
+            <div class="col-8 text-start d-flex flex-column justify-content-center"
+                style="border-radius: 8px;">
+                <h3 class="fw-bold">Restablecer Contraseña</h3>
+            </div>
+
+            <div class="col-4 text-end d-flex flex-column justify-content-center" 
+                style="border-radius: 8px; background-color: #0d1321;">
+                <img src="~/img/desk_core_nombre_w.svg" alt="Desk Core" height="70">
+            </div>
+        </div>
+    </div>
+
+    <div class="alert alert-primary text-center">
+        <p class="fw-bold text-center m-auto">Ingrese su nueva contraseña.</p>
+    </div>
+
+    <form asp-action="RestablecerContrasena" method="post">
+        
+        @{/*<div asp-validation-summary="All" class="text-danger"></div>*/}
+
+        <input type="hidden" asp-for="Token" />
+        
+        <div class="form-floating">
+            <input type="password" asp-for="Password" class="form-control principal-input mbrl-0" 
+                placeholder="Contraseña">
+            <label asp-for="Password">Nueva Contraseña</label>
+            <span asp-validation-for="Password" class="text-danger"></span>
+        </div>
+
+        <div class="form-floating">
+            <input type="password" asp-for="ConfirmPassword" class="form-control principal-input mtrl-0" 
+                placeholder="ConfirmarContraseña">
+            <label asp-for="ConfirmPassword">Confirmar Contraseña</label>
+            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+        </div>
+
+        <br>
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-principal">Restablecer</button>
+        </div>
+    </form>
+
+</div>

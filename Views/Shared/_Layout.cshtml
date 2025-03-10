@@ -1,0 +1,103 @@
+﻿@using System.Security.Claims
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] | Desk Core</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <!--  <link rel="stylesheet" href="~/css/components.css" asp-append-version="true" />-->
+    <link rel="stylesheet" href="~/css/Components/botones.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Components/utilidades.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/v1.styles.css" asp-append-version="true" />
+    <link rel="icon" href="~/favicon.svg" asp-append-version="true" />
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/v/bs5/jszip-3.10.1/dt-2.2.2/af-2.7.0/b-3.2.2/b-colvis-3.2.2/b-html5-3.2.2/b-print-3.2.2/cr-2.0.4/date-1.5.5/fc-5.0.4/fh-4.0.1/kt-2.12.1/r-3.0.3/rg-1.5.1/rr-1.5.0/sc-2.4.3/sb-1.8.2/sp-2.3.3/sl-3.0.0/sr-1.4.1/datatables.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+    
+    @RenderSection("Styles", required: false)
+</head>
+
+<body>
+    <div class="base">
+        <header>
+            <nav class="navbar fixed-top">
+                <div class="container">
+                    <a asp-controller="Home" asp-action="Index" class="navbar-brand">
+                        <img src="~/img/desk_core_logo.svg" alt="Desk Core" width="55" height="55">
+                    </a>
+
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        var usuario = User.Identity as ClaimsIdentity;
+                        var Rol = usuario?.FindFirst(ClaimTypes.Role)?.Value;
+
+                        <div>
+                            <a asp-controller="@Rol" asp-action="Index" type="button" class="btn btn-principal">
+                                <i class="bi bi-house-door-fill" style="font-size: 1.1rem;"></i></a>
+
+                            <form asp-controller="Acceso" asp-action="Salir" method="post" style="display: inline;">
+                                <button type="submit" class="btn btn-cancelar">
+                                    <i class="bi bi-box-arrow-right" style="font-size: 1.1rem;"></i>
+                                </button>
+                            </form>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="btn-group justify-items-center">
+
+                            <button asp-controller="Home" asp-action="Index" type="button"
+                                class="btn btn-principal">Empezar</button>
+
+                            <button class="btn btn-principal dropdown-toggle dropdown-toggle-split" type="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                <span class="visually-hidden">Toggle Dropdown</span>
+                            </button>
+
+                            <ul class="dropdown-menu dropdown-menu-center" style="background-color: #eff1f3cc; backdrop-filter: blur(8px);">
+                                <li><a asp-controller="Acceso" asp-action="Ingresar" type="button"
+                                    class="dropdown-item">Iniciar Sesión</a></li>
+                                
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+
+                                <li><a asp-controller="Acceso" asp-action="RegistrarEmail" type="button"
+                                    class="dropdown-item">Crear Cuenta</a></li>
+                            </ul>
+                        </div>
+                    }
+                </div>
+            </nav>
+        </header>
+
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+        
+        <footer>
+            <div class="border-top">
+                <div class="container text-center">
+                    <div class="row align-items-center" style="height: 60px;">
+                        <div class="col text-start fw-bold">EC</div>
+                        <div class="col text-end fw-bold">&copy; 2025 DESK Core</div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <script src="https://cdn.datatables.net/v/bs5/jszip-3.10.1/dt-2.2.2/af-2.7.0/b-3.2.2/b-colvis-3.2.2/b-html5-3.2.2/b-print-3.2.2/cr-2.0.4/date-1.5.5/fc-5.0.4/fh-4.0.1/kt-2.12.1/r-3.0.3/rg-1.5.1/rr-1.5.0/sc-2.4.3/sb-1.8.2/sp-2.3.3/sl-3.0.0/sr-1.4.1/datatables.min.js"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

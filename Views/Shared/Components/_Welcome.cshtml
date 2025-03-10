@@ -1,0 +1,18 @@
+﻿@using System.Security.Claims
+@{
+    var usuario = User.Identity as ClaimsIdentity;
+
+    var usuNombre = usuario?.FindFirst(ClaimTypes.Name)?.Value;
+    var usuApellido = usuario?.FindFirst(ClaimTypes.Surname)?.Value;
+    var usuRol = usuario?.FindFirst(ClaimTypes.Role)?.Value;
+    var usuId = usuario?.FindFirst(ClaimTypes.NameIdentifier)?.Value;
+    
+    string prefijo = usuRol.ToString().Substring(0, 3).ToUpper();
+
+    string identificador = $"{prefijo} - 000{usuId}";
+}
+
+<div class="row">
+    <h3 class="">Bienvenido, @usuNombre @usuApellido</h3>
+    <p class="text-muted">Panel de @usuRol - ID: @identificador</p>
+</div>

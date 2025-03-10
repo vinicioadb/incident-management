@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100,
+    "YTLC" 500;
+  background-color: #eff1f3;
+}
+
+header, nav {
+  height: 90px;
+  background-color: #eff1f3cc;
+}
+
+nav {
+  backdrop-filter: blur(8px);
+}
+
+footer {
+  height: 60px;
+}
+
+.base {
+  min-height: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+.dropdown-menu {
+  background-color: #eff1f3cc; 
+  backdrop-filter: blur(8px);
+}
+
+/*
+html {
+  font-size: 14px;
+}*/
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+/*
+html {
+  position: relative;
+  min-height: 100%;
+}
+  */
+
+.border-bottom {
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.border-top {
+  border-top: 1px solid #e5e5e5;
+}
+
+
+/* Home/Index */
+.rounded-container {
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+}
+
+.rounded-container img.main-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 75dvh; /* Limita la altura de la imagen */
+  object-fit: cover; /* Mantiene la relación de aspecto */
+  filter: brightness(0.4); /* Aplica un fondo semi-transparente */
+}
+
+.image-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  /*padding-bottom: 120px;*/
+}
+
+.image-overlay img {
+  width: 200px;
+  height: 100px;
+  object-fit: cover;
+  margin: 0 10px;
+}
+
+.card-group {
+  display: flex;
+  /*
+  flex-wrap: wrap;
+  margin-top: -15px; /* Ajusta el margen superior para evitar que el color-overlay sobrepase */
+}
+
+.card-group .card {
+  flex: 1 1 auto;
+  border: none;
+  border-radius: 0;
+  /*margin-top: 15px; /* Ajusta el margen superior para evitar que el color-overlay sobrepase */
+}
+
+.card-group .card:first-of-type {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 8px;
+}
+
+.card-group .card:last-of-type {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 8px;
+}

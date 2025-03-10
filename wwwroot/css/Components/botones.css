@@ -1,0 +1,89 @@
+:root {
+    --dk-principal: #20517A;
+    --dk-principal-vN1: #1768AC;
+    --dk-principal-vN2: #257BC1;
+    --dk-principal-vN3: #409EEB;
+
+    --dk-principal-vN1-rgb: 23, 104, 172;
+
+    --dk-rojo: #c1121f;
+    --dk-rojo-vN1: #960E17;
+    --dk-rojo-vN2: #D31420;
+    --dk-rojo-vN3: #E71523;
+    --dk-border-radius: 8px;
+}
+
+.btn {
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: var(--dk-border-radius);
+}
+
+.btn:focus,
+.btn:hover,
+.btn:active {
+    text-decoration: none;
+    outline: none;
+    box-shadow: none;
+    border-color: transparent;
+}
+
+.btn-principal {
+    background-color: var(--dk-principal-vN1);
+    color: white;
+}
+
+.btn-principal:focus,
+.btn-principal:hover,
+.btn-principal:active {
+    background-color: var(--dk-principal);
+    color: white;
+}
+
+.btn-outline-principal {
+    background-color: transparent;
+    color: var(--dk-principal-vN1);
+    border-color: var(--dk-principal-vN1);
+}
+
+.btn-outline-principal:focus,
+.btn-outline-principal:hover,
+.btn-outline-principal:active {
+    background-color: var(--dk-principal-vN1);
+    color: white;
+}
+
+.btn-principal:disabled,
+.btn-principal[disabled] {
+    background-color: var(--dk-principal-vN3);
+    border-color: red;
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+.btn-cancelar {
+    background-color: var(--dk-rojo);
+    color: white;
+}
+
+.btn-cancelar:focus,
+.btn-cancelar:hover,
+.btn-cancelar:active {
+    background-color: var(--dk-rojo-vN1);
+    color: white;
+}
+
+.btn-cancelar:disabled,
+.btn-cancelar[disabled] {
+    background-color: var(--dk-rojo-vN3);
+    opacity: 1;
+    cursor: not-allowed;
+}
+
+.bg-principal {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--dk-principal-vN1-rgb), var(--bs-bg-opacity)) !important;
+}

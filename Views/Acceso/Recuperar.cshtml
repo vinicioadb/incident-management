@@ -1,0 +1,67 @@
+﻿@model v1.Models.ViewModels.ForgotPasswordViewModel
+
+@{
+    ViewData["Title"] = "Recuperar Contraseña";
+}
+
+<div class="form-signin m-auto mt-5">
+
+    <div class="container">
+        <div class="row d-flex align-items-stretch">
+            <div class="col-8 text-start d-flex flex-column justify-content-center"
+                style="border-radius: 8px;">
+                
+                <div class="fw-bold fs-2 h1">Recuperar contraseña</div>
+                <div>Ingrese su correo</div>
+            </div>
+
+            <div class="col-4 text-end d-flex flex-column justify-content-center" 
+                style="border-radius: 8px; background-color: #0d1321;">
+                <img src="~/img/desk_core_nombre_w.svg" alt="Desk Core" height="70">
+            </div>
+        </div>
+    </div>
+
+    <br>
+    
+    <form asp-action="Recuperar" method="post">
+        @{/*<div asp-validation-summary="All" class="text-danger"></div>*/}
+        
+        <div class="form-floating">
+            <input type="email" asp-for="Email" 
+                class="form-control principal-input" placeholder="correo">
+            <label asp-for="Email">Correo Electrónico</label>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+
+        <br>
+
+        <div class="d-grid gap-2">
+            <button type="submit" class="btn btn-principal">Enviar</button>
+        </div>
+    </form>
+
+</div>
+
+@{/*
+<h2>@ViewData["Title"]</h2>
+<form asp-action="RecuperarClave" method="post">
+    <div asp-validation-summary="All" class="text-danger"></div>
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Enviar</button>
+</form>
+
+<div class="form-floating">
+            <input type="password"
+                class="form-control principal-input @(ViewData.ModelState["UsurClave"]?.Errors.Count > 0 ? "is-invalid" : "")"
+                asp-for="UsurClave" placeholder="Contraseña">
+
+            <label asp-for="UsurClave">Contraseña</label>
+            <span asp-validation-for="UsurClave" class="text-danger"></span>
+        </div>
+
+*/}

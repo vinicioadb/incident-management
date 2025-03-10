@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Inicio";
+}
+
+<div class="container">
+    <div class="rounded-container">
+        <img src="~/img/fondo.jpg" alt="fondo_inicio" class="img-fluid main-image">
+
+        <div class="image-overlay text-left">
+            <img src="~/img/Desk Core bento_1.svg" alt="Desk Core Culture">
+
+            <button class="btn btn-outline-light">Conocer Más</button>
+        </div>
+
+        <div class="card-group">
+            <div class="card text-white text-center" style="background-color: #20517a;">
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card text-white text-center" style="background-color: #1768ac;">
+                <div class="card-body">
+                </div>
+            </div>
+            <div class="card text-white text-center" style="background-color: #257bc1;">
+                <div class="card-body">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    
+    <script>
+        const toastTrigger = document.getElementById('liveToastBtn')
+        const toastLiveExample = document.getElementById('liveToast')
+
+        if (toastTrigger) {
+            const toastBootstrap = bootstrap.Toast.getOrCreateInstance(toastLiveExample)
+            toastTrigger.addEventListener('click', () => {
+                toastBootstrap.show()
+            })
+        }
+    </script>
+}

@@ -1,0 +1,66 @@
+:root {
+    --dk-principal: #20517A;
+    --dk-principal-vN1: #1768AC;
+    --dk-principal-vN2: #257BC1;
+    --dk-principal-vN3: #409EEB;
+
+    --dk-fondo: #eff1f3;
+    --dk-border-radius: 8px;
+}
+
+.form-control.principal-input {
+    border-radius: 8px;
+    background-color: transparent; /* Fondo transparente */
+    box-shadow: none; /* Sin sombras */
+}
+
+.form-control.principal-input:focus {
+    /*border-radius: 8px;*/
+    outline: none;
+    box-shadow: none;
+}
+
+.form-select.principal-input {
+    border-radius: 8px;
+    background-color: transparent; /* Fondo transparente */
+    box-shadow: none; /* Sin sombras */
+}
+
+.form-select.principal-input:focus {
+    /*border-radius: 8px;*/
+    outline: none;
+    box-shadow: none;
+}
+
+.form-signin {
+    max-width: 400px;
+    padding: 1rem;
+}
+
+.form-control.mbrl-0 {
+    margin-bottom: 0px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-control.mtrl-0 {
+    margin-bottom: 10px;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.card {
+    border-radius: var(--dk-border-radius);
+    background-color: transparent;
+}
+
+.card-header {
+    border-top-left-radius: 7px !important;
+    border-top-right-radius: 7px !important;
+    background-color: #F7F7F7;
+}
+
+.alert {
+    border-color: transparent;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.174);
+}

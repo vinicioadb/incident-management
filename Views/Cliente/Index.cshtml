@@ -1,0 +1,149 @@
+﻿@{
+    ViewData["Title"] = "Cliente";
+}
+
+<style>
+    .nav-tabs .nav-link {
+        cursor: pointer;
+    }
+
+    .ticket-card {
+        transition: transform 0.2s;
+        cursor: pointer;
+    }
+
+    .ticket-card:hover {
+        transform: translateY(-3px);
+    }
+
+    .priority-high {
+        border-left: 4px solid #dc3545;
+    }
+
+    .priority-medium {
+        border-left: 4px solid #ffc107;
+    }
+
+    .priority-low {
+        border-left: 4px solid #28a745;
+    }
+
+    .status-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+    }
+
+    .chart-container {
+        height: 200px;
+        position: relative;
+    }
+
+    .activity-timeline {
+        position: relative;
+        padding-left: 30px;
+    }
+
+    .activity-timeline::before {
+        content: '';
+        position: absolute;
+        left: 15px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #e9ecef;
+    }
+
+    .activity-item {
+        position: relative;
+        margin-bottom: 1.5rem;
+    }
+
+    .activity-item::before {
+        content: '';
+        position: absolute;
+        left: -30px;
+        top: 0;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: #0d6efd;
+    }
+    
+    .card {
+        background-color: transparent;
+        border-radius: 8px;
+    }
+</style>
+
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/Components/vistas.css" />
+}
+
+@await Html.PartialAsync("Components/_Sidebar")
+
+<!-- Dashboard Content -->
+<div class="mt-3 container">
+
+    @await Html.PartialAsync("Components/_Welcome")
+    
+    <!-- Tickets del Cliente -->
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Mis Tickets</h5>
+                </div>
+                <div class="card-body">
+                    <div class="ticket-card card mb-3 priority-high">
+                        <div class="card-body">
+                            <span class="status-badge badge bg-warning">En Progreso</span>
+                            <h6 class="card-title">#TK001 - Error en Sistema de Pagos</h6>
+                            <p class="card-text small">Asignado a: Carlos Rodríguez - Actualizado hace 30 min
+                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-danger">Alta Prioridad</span>
+                                <button class="btn btn-sm btn-principal">Ver Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ticket-card card mb-3 priority-low">
+                        <div class="card-body">
+                            <span class="status-badge badge bg-success">Resuelto</span>
+                            <h6 class="card-title">#TK003 - Actualización de Perfil</h6>
+                            <p class="card-text small">Resuelto por: Ana Martínez - Hace 2 días</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-success">Baja Prioridad</span>
+                                <button class="btn btn-sm btn-principal">Ver Detalles</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-header">
+                    <h5 class="mb-0">Guía Rápida</h5>
+                </div>
+                <div class="card-body">
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-principal">
+                            <i class="bi bi-question-circle me-2"></i>
+                            Preguntas Frecuentes
+                        </button>
+                        <button class="btn btn-outline-principal">
+                            <i class="bi bi-book me-2"></i>
+                            Manual de Usuario
+                        </button>
+                        <button class="btn btn-outline-principal">
+                            <i class="bi bi-headset me-2"></i>
+                            Contactar Soporte
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

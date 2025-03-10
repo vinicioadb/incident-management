@@ -1,0 +1,98 @@
+
+.stat-card {
+    transition: transform 0.3s;
+    border-color: transparent;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.incident-priority-high {
+    border-left: 4px solid #dc3545;
+}
+
+.incident-priority-medium {
+    border-left: 4px solid #ffc107;
+}
+
+.incident-priority-low {
+    border-left: 4px solid #28a745;
+}
+
+.list-group>li {
+    background-color: transparent;
+}
+
+.incident-list.card {
+    border-radius: 0px !important;
+}
+
+/*Index Tecnico*/
+
+.nav-tabs .nav-link {
+    cursor: pointer;
+}
+
+.ticket-card {
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.ticket-card:hover {
+    transform: translateY(-3px);
+}
+
+.priority-high {
+    border-left: 4px solid #dc3545;
+}
+
+.priority-medium {
+    border-left: 4px solid #ffc107;
+}
+
+.priority-low {
+    border-left: 4px solid #28a745;
+}
+
+.status-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+.chart-container {
+    height: 200px;
+    position: relative;
+}
+
+.activity-timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.activity-timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #e9ecef;
+}
+
+.activity-item {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.activity-item::before {
+    content: '';
+    position: absolute;
+    left: -30px;
+    top: 0;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #0d6efd;
+}

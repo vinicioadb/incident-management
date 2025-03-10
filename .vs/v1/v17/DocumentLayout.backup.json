@@ -1,0 +1,136 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|c:\\users\\fernando\\dev\\c#\\jhon\\v1\\v1\\models\\v1dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|solutionrelative:v1\\models\\v1dbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|c:\\users\\fernando\\dev\\c#\\jhon\\v1\\v1\\models\\tblusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|solutionrelative:v1\\models\\tblusuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|c:\\users\\fernando\\dev\\c#\\jhon\\v1\\v1\\models\\tblcategorium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|solutionrelative:v1\\models\\tblcategorium.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|c:\\users\\fernando\\dev\\c#\\jhon\\v1\\v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|solutionrelative:v1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|c:\\users\\fernando\\dev\\c#\\jhon\\v1\\v1\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|solutionrelative:v1\\controllers\\usuariocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|c:\\users\\fernando\\dev\\c#\\jhon\\v1\\v1\\viewmodels\\registrousuarioviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{00D7B8CF-C420-4B07-A597-6F8B10EC6C28}|v1\\v1.csproj|solutionrelative:v1\\viewmodels\\registrousuarioviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 8,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\Program.cs",
+              "RelativeDocumentMoniker": "v1\\Program.cs",
+              "ToolTip": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\Program.cs",
+              "RelativeToolTip": "v1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T19:33:09.448Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TblUsuario.cs",
+              "DocumentMoniker": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\Models\\TblUsuario.cs",
+              "RelativeDocumentMoniker": "v1\\Models\\TblUsuario.cs",
+              "ToolTip": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\Models\\TblUsuario.cs",
+              "RelativeToolTip": "v1\\Models\\TblUsuario.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAkwB8AAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T19:28:34.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "RegistroUsuarioViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\ViewModels\\RegistroUsuarioViewModel.cs",
+              "RelativeDocumentMoniker": "v1\\ViewModels\\RegistroUsuarioViewModel.cs",
+              "ToolTip": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\ViewModels\\RegistroUsuarioViewModel.cs",
+              "RelativeToolTip": "v1\\ViewModels\\RegistroUsuarioViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T19:16:01.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "TblCategorium.cs",
+              "DocumentMoniker": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\Models\\TblCategorium.cs",
+              "RelativeDocumentMoniker": "v1\\Models\\TblCategorium.cs",
+              "ToolTip": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\Models\\TblCategorium.cs",
+              "RelativeToolTip": "v1\\Models\\TblCategorium.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T19:10:19.632Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "v1DbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\Models\\v1DbContext.cs",
+              "RelativeDocumentMoniker": "v1\\Models\\v1DbContext.cs",
+              "ToolTip": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\Models\\v1DbContext.cs",
+              "RelativeToolTip": "v1\\Models\\v1DbContext.cs",
+              "ViewState": "AgIAAAQBAAAAAAAAAAAmwBEAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T19:32:55.189Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UsuarioController.cs",
+              "DocumentMoniker": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\Controllers\\UsuarioController.cs",
+              "RelativeDocumentMoniker": "v1\\Controllers\\UsuarioController.cs",
+              "ToolTip": "C:\\Users\\Fernando\\Dev\\C#\\Jhon\\v1\\v1\\Controllers\\UsuarioController.cs",
+              "RelativeToolTip": "v1\\Controllers\\UsuarioController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T19:18:18.612Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
